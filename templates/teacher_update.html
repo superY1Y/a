@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./asset/css/bootstrap.min.css">
+    <script src="./asset/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+<div class="container mt-8">
+    {{template "header"}}
+    <div class="row   justify-content-center">
+        <div class="col-md-4">
+            <form method="post" action="/teacher_update">
+                <div class="mb-3">
+                    <label  class="form-label">-----------------------------------------------------------</label>
+                    <strong>请输入你要修改属性</strong>
+                    <br>
+                    <br>
+                    <label for="tno" class="form-label">教工号</label>
+                    <input type="text" name="tno" class="form-control" id="tno">
+                </div>
+                <div class="mb-3">
+                    <label for="tname" class="form-label">姓名</label>
+                    <input type="text"  name="tname" class="form-control" id="tname">
+                </div>
+                <div class="mb-3">
+                    <label for="tsex" class="form-label">性别</label>
+                    <input type="text" name="tsex"  class="form-control" id="tsex">
+                </div>
+                <div class="mb-3">
+                    <label for="tpt" class="form-label">职称</label>
+                    <input type="text"  name="tpt" class="form-control" id="tpt">
+                </div>
+                <div class="mb-3">
+                    <label for="teb" class="form-label">学历</label>
+                    <input type="text" name="teb"  class="form-control" id="teb">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="exampleInputYear" class="form-label">年</label>
+                        <input type="text" name="sage_year" class="form-control" id="exampleInputYear">
+                    </div>
+                    <div class="col">
+                        <label for="exampleInputMonth" class="form-label">月</label>
+                        <input type="text" name="sage_month" class="form-control" id="exampleInputMonth">
+                    </div>
+                    <div class="col">
+                        <label for="exampleInputDay" class="form-label">日</label>
+                        <input type="text" name="sage_day" class="form-control" id="exampleInputDay">
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">更新</button>
+                <p style="color: red;">{{.}}</p>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

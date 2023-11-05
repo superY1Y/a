@@ -1,0 +1,131 @@
+{{define "header"}}
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+        <nav class="navbar navbar-light bg-primary   fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand " href="/login">Welcome,Master</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header bg-primary ">
+                        <h5 class="navbar-brand" id="offcanvasNavbarLabel ">发现</h5>
+                        <button type="button" class="btn-close text-reset " data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1  pe-3">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    学生信息操作
+                                </a>
+                                <ul class="dropdown-menu " id="1" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item " href="/student">增加</a></li>
+                                    <li><a class="dropdown-item " href="/student_update">修改</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                        <form class="d-flex" action="/delete" method="POST">
+                                            <input class="form-control me-2" type="search" name="sno"
+                                                placeholder="请输入学生学号删除" aria-label="Search">
+                                            <button class="btn btn-outline-danger" type="submit">Delete</button>
+                                            {{if .errorI}}
+                                            <p class="error-message" style="color: red">{{.errorI}}</p>
+                                            {{end}}
+                                        </form>
+                                        <form action="/search_student"  method="POST" class="d-flex">
+                                            <input class="form-control me-2" type="search" name="sno" placeholder="请输入学生学号查询"
+                                                aria-label="Search">
+                                            <button class="btn btn-outline-success" type="submit">Search</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    教师信息操作
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item" href="/teacher_add">增加</a></li>
+                                    <li><a class="dropdown-item" href="/teacher_update">修改</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                        <form class="d-flex" action="/teacher_delete" method="POST">
+                                            <input class="form-control me-2" type="search" name="tno" placeholder="请输入教工号删除"
+                                                aria-label="Search">
+                                            <button class="btn btn-outline-danger" type="submit">Delete</button>
+                                            {{if .errorI}}
+                                            <p class="error-message" style="color: red">{{.errorI}}</p>
+                                            {{end}}
+                                        </form>
+                                        <form class="d-flex" action="/teacher_check" method="post">
+                                            <input class="form-control me-2" type="search" name="tno" placeholder="请输入教工号查询"
+                                                aria-label="Search">
+                                            <button class="btn btn-outline-success" type="submit">Search</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    院系信息操作
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item" href="/department_add">增加</a></li>
+                                    <li><a class="dropdown-item" href="/department_update">修改</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                        <form class="d-flex">
+                                            <input class="form-control me-2" type="search" placeholder="请输入院系号删除"
+                                                aria-label="Search">
+                                            <button class="btn btn-outline-danger" type="submit">Delete</button>
+                                            {{if .errorI}}
+                                            <p class="error-message" style="color: red">{{.errorI}}</p>
+                                            {{end}}
+                                        </form>
+                                        <form class="d-flex" action="/department_check" method="post">
+                                            <input class="form-control me-2" type="search" name="dno" placeholder="请输入院系号查询"
+                                                aria-label="Search">
+                                            <button class="btn btn-outline-success" type="submit">Search</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    课程信息操作
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item" href="/post">增加</a></li>
+                                    <li><a class="dropdown-item" href="/post_update">修改</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                        <form class="d-flex">
+                                            <input class="form-control me-2" type="search" placeholder="请输入课程号删除"
+                                                aria-label="Search">
+                                            <button class="btn btn-outline-danger" type="submit">Delete</button>
+                                            {{if .errorI}}
+                                            <p class="error-message" style="color: red">{{.errorI}}</p>
+                                            {{end}}
+                                        </form>
+                                        <form  action="/post" method="POST" class="d-flex">
+                                            <input class="form-control me-2" type="search" placeholder="请输入课程号查询"
+                                                aria-label="Search">
+                                            <button class="btn btn-outline-success" type="submit">Search</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+{{end}}

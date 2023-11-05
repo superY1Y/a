@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./asset/css/bootstrap.min.css">
+    <script src="./asset/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mt-8">
+        {{template "header"}}
+        <div class="row   justify-content-center">
+            <div class="col-md-4">
+                <form method="post" action="/student_update">
+                    <div class="mb-3">
+                        <label class="form-label">-----------------------------------------------------------</label>
+                        <strong>请输入你要修改属性</strong>
+                        <br>
+                        <br>
+                        <label for="exampleInputEmail1" class="form-label">学号</label>
+                        <input type="text" name="sno" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">密码</label>
+                        <input type="password"  name="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword" class="form-label">确认密码</label>
+                        <input type="password" name="password2"  class="form-control" id="exampleInputPassword">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sname" class="form-label">姓名</label>
+                        <input type="text"  name="sname" class="form-control" id="sname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ex" class="form-label">性别</label>
+                        <input type="text" name="ssex"  class="form-control" id="ex">
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                          <label for="exampleInputYear" class="form-label">年</label>
+                          <input type="text" name="sage_year" class="form-control" id="exampleInputYear">
+                        </div>
+                        <div class="col">
+                          <label for="exampleInputMonth" class="form-label">月</label>
+                          <input type="text" name="sage_month" class="form-control" id="exampleInputMonth">
+                        </div>
+                        <div class="col">
+                          <label for="exampleInputDay" class="form-label">日</label>
+                          <input type="text" name="sage_day" class="form-control" id="exampleInputDay">
+                        </div>
+                      </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword2" class="form-label">系别</label>
+                        <input type="text" name="sdept"  class="form-control" id="exampleInputPassword2">
+                    </div>
+                    <button type="submit" class="btn btn-primary">更新</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

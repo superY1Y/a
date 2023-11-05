@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./asset/css/bootstrap.min.css">
+    <script src="./asset/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mt-8">
+        {{template "header"}}
+        <div class="row   justify-content-center">
+            <div class="col-md-4">
+                <form method="post" action="/post_update">
+                    <div class="mb-3">
+                        <label class="form-label">-----------------------------------------------------------</label>
+                        <strong>请输入你要修改属性</strong>
+                        <br>
+                        <br>
+                        <label for="cno" class="form-label">课程号</label>
+                        <input type="text" name="cno" class="form-control"  id="cno">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">课程名</label>
+                        <input type="text"  name="cname" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword2" class="form-label">先行课编号</label>
+                        <input type="text" name="cpno"  class="form-control" id="exampleInputPassword2">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword0" class="form-label">学分</label>
+                        <input type="text" name="ccredit"  class="form-control" id="exampleInputPassword0">
+                    </div>
+                    <button type="submit" class="btn btn-primary">更新</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

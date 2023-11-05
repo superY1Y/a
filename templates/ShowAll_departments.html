@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./asset/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./asset/editormd/css/editormd.min.css">
+    <script src="./asset/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    {{template "header"}}
+    <div class="row mt-3">
+        {{range $department := . -}}
+        <div class="col-md-6">
+            <div
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">系编号：{{$department.Dno}}</strong>
+                    <h3 class="mb-0">姓名：{{$department.Dname}}</h3>
+                    <br>
+                    <p class="card-text mb-auto">系主任：{{$department.Dmanagerno}}</p>
+                    <a href="#" class="stretched-link">删除</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+                         role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                         focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+                                                                                     dy=".3em">图片</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        {{- end}}
+    </div>
+</div>
+</body>
+
+</html>
